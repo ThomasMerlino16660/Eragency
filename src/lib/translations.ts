@@ -141,8 +141,7 @@ export const translations = {
         phone: "Tu telefono",
         company: "Inmobiliaria o proyecto",
         message: "Contanos que necesitas",
-        submit: "Enviar mensaje",
-        success: "Mensaje enviado correctamente",
+        submit: "Enviar por WhatsApp",
       },
       info: {
         email: "itsenzoroldan@gmail.com",
@@ -299,8 +298,7 @@ export const translations = {
         phone: "Your phone",
         company: "Real estate company or project",
         message: "Tell us what you need",
-        submit: "Send message",
-        success: "Message sent successfully",
+        submit: "Send via WhatsApp",
       },
       info: {
         email: "itsenzoroldan@gmail.com",

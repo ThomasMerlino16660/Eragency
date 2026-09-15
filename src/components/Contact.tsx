@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle, Calendar } from "lucide-react";
+import { Mail, MapPin, Send, Calendar } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
@@ -19,12 +19,33 @@ const CALENDLY_URL = "https://calendly.com/itseragency/asesoria";
 
 export default function Contact() {
   const { t, language } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    const form = formRef.current;
+    if (!form) return;
+
+    const data = new FormData(form);
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const phone = data.get("phone") as string;
+    const company = data.get("company") as string;
+    const message = data.get("message") as string;
+
+    const lines = [
+      `Hola! Soy *${name}*`,
+      company ? `de *${company}*` : "",
+      "",
+      `${message}`,
+      "",
+      `---`,
+      `Email: ${email}`,
+      phone ? `Tel: ${phone}` : "",
+    ].filter(Boolean).join("\n");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`;
+    window.open(url, "_blank");
   };
 
   const inputClasses =
@@ -60,16 +81,18 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 <input
                   type="text"
+                  name="name"
                   placeholder={t.contact.form.name}
                   required
                   className={inputClasses}
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder={t.contact.form.email}
                   required
                   className={inputClasses}
@@ -78,51 +101,35 @@ export default function Contact() {
               <div className="grid md:grid-cols-2 gap-5">
                 <input
                   type="tel"
+                  name="phone"
                   placeholder={t.contact.form.phone}
                   className={inputClasses}
                 />
                 <input
                   type="text"
+                  name="company"
                   placeholder={t.contact.form.company}
                   className={inputClasses}
                 />
               </div>
               <textarea
+                name="message"
                 placeholder={t.contact.form.message}
                 rows={4}
                 required
                 className={`${inputClasses} resize-none`}
               />
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  type="submit"
-                  className="group inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-background font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
-                >
-                  {submitted ? (
-                    <>
-                      {t.contact.form.success}
-                      <CheckCircle size={16} />
-                    </>
-                  ) : (
-                    <>
-                      {t.contact.form.submit}
-                      <Send
-                        size={16}
-                        className="group-hover:translate-x-1 transition-transform"
-                      />
-                    </>
-                  )}
-                </button>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
-                >
-                  <WhatsAppIcon size={18} />
-                  WhatsApp
-                </a>
-              </div>
+              <button
+                type="submit"
+                className="group inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
+              >
+                <WhatsAppIcon size={18} />
+                {t.contact.form.submit}
+                <Send
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
             </form>
           </motion.div>
 
