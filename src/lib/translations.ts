@@ -4,119 +4,143 @@ export const translations = {
       home: "Inicio",
       about: "Nosotros",
       services: "Servicios",
-      portfolio: "Clientes",
+      method: "Metodo",
+      results: "Resultados",
       contact: "Contacto",
     },
     hero: {
-      tagline: "Marketing Inmobiliario",
-      title: "Transformamos propiedades en oportunidades de negocio",
+      tagline: "ER Agency",
+      title: "No vendemos humo.",
+      titleLine2: "Vendemos propiedades.",
       subtitle:
-        "Estrategias de marketing digital especializadas en el sector inmobiliario. Potenciamos tu marca con campanas de alto impacto en Meta Ads.",
-      cta: "Agenda una reunion",
-      ctaSecondary: "Conoce nuestros servicios",
+        "Somos la agencia que las inmobiliarias eligen cuando quieren dejar de gastar en publicidad y empezar a invertir. Meta Ads con estrategia, datos y resultados reales.",
+      cta: "Agenda tu asesoria",
+      ctaSecondary: "Como trabajamos",
     },
     about: {
-      label: "Sobre Nosotros",
-      title: "La agencia que entiende el mercado inmobiliario",
+      label: "Quienes somos",
+      title: "La agencia nacio de una frustracion",
       description:
-        "En ER Agency nos especializamos en marketing digital para el sector inmobiliario. Combinamos estrategia, creatividad y tecnologia para generar resultados medibles que impulsan el crecimiento de nuestros clientes.",
+        "Vimos como inmobiliarias tiraban plata en campanas sin estrategia, con creativos genericos y sin seguimiento. Decidimos armar algo distinto: una agencia que entiende el negocio inmobiliario desde adentro.",
       description2:
-        "Nuestro enfoque se basa en datos, performance y un profundo conocimiento del mercado. Cada campana esta disenada para maximizar el retorno de inversion y posicionar tu marca como lider en el sector.",
-      stats: [
-        { value: "+150", label: "Clientes activos" },
-        { value: "+2M", label: "Leads generados" },
-        { value: "98%", label: "Tasa de retencion" },
-        { value: "+500", label: "Campanas lanzadas" },
-      ],
+        "Hoy gestionamos campanas para desarrolladoras, brokers y equipos de ventas que necesitan leads que realmente compren. No prometemos likes, prometemos reuniones agendadas.",
+      philosophy: "Cada peso que invertis tiene que volver multiplicado. Esa es nuestra unica regla.",
     },
     services: {
-      label: "Servicios",
-      title: "Soluciones integrales para el sector inmobiliario",
+      label: "Que hacemos",
+      title: "Servicios que mueven la aguja",
       subtitle:
-        "Cada servicio esta disenado para maximizar tu presencia digital y generar resultados concretos.",
+        "No hacemos de todo. Hacemos lo que funciona para el rubro inmobiliario.",
+      main: {
+        title: "Meta Ads para inmobiliarias",
+        badge: "Servicio estrella",
+        description:
+          "Campanas en Facebook e Instagram disenadas para captar compradores e inversores reales. Segmentacion por zona, poder adquisitivo e intencion de compra. Optimizacion constante con IA para bajar el costo por lead semana a semana.",
+        features: [
+          "Segmentacion hiper-localizada",
+          "Creativos que venden, no que decoran",
+          "Optimizacion con inteligencia artificial",
+          "Reportes semanales sin letra chica",
+        ],
+      },
       items: [
-        {
-          title: "Meta Ads",
-          description:
-            "Campanas optimizadas en Facebook e Instagram para captar leads calificados y generar ventas en el sector inmobiliario.",
-          icon: "target",
-        },
         {
           title: "Google Ads",
           description:
-            "Posicionamiento en busquedas estrategicas para captar la intencion de compra en el momento exacto.",
+            "Para captar al que ya esta buscando. Aparece primero cuando alguien googlea departamentos en tu zona.",
           icon: "search",
         },
         {
-          title: "Branding Inmobiliario",
+          title: "Branding & Identidad",
           description:
-            "Construccion de marca solida y diferenciada que genera confianza y posiciona tu empresa como lider del mercado.",
+            "Tu marca tiene que transmitir confianza antes de la primera llamada. Disenamos identidades que venden.",
           icon: "palette",
-        },
-        {
-          title: "Social Media",
-          description:
-            "Gestion profesional de redes sociales con contenido estrategico que conecta con tu audiencia objetivo.",
-          icon: "share",
         },
         {
           title: "Landing Pages",
           description:
-            "Paginas de aterrizaje optimizadas para conversion, disenadas especificamente para el mercado inmobiliario.",
+            "Paginas rapidas, claras y pensadas para una sola cosa: que el lead deje sus datos.",
           icon: "layout",
         },
         {
-          title: "Analisis y Reportes",
+          title: "Social Media",
           description:
-            "Dashboards en tiempo real y reportes detallados para tomar decisiones basadas en datos concretos.",
-          icon: "chart",
+            "Contenido que posiciona. No publicamos por publicar, cada post tiene un objetivo.",
+          icon: "share",
+        },
+      ],
+      aiNote: "Usamos IA como herramienta, no como reemplazo. Automatiza lo repetitivo para que nosotros nos enfoquemos en la estrategia.",
+    },
+    method: {
+      label: "Como trabajamos",
+      title: "Nuestro proceso, sin misterios",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnostico",
+          description:
+            "Analizamos tu situacion actual: que hiciste, que funciono, que no. Sin juicios, con datos.",
+        },
+        {
+          number: "02",
+          title: "Estrategia",
+          description:
+            "Armamos un plan a medida. No hay plantillas. Tu mercado, tu zona, tu buyer persona.",
+        },
+        {
+          number: "03",
+          title: "Ejecucion",
+          description:
+            "Lanzamos las campanas y las optimizamos en tiempo real. Ajustamos creativos, audiencias y presupuesto.",
+        },
+        {
+          number: "04",
+          title: "Resultados",
+          description:
+            "Reportes claros, reuniones de seguimiento y un objetivo: que cada mes sea mejor que el anterior.",
         },
       ],
     },
     portfolio: {
-      label: "Nuestros Clientes",
-      title: "Resultados que hablan por si solos",
+      label: "Resultados reales",
+      title: "Numeros, no promesas",
       subtitle:
-        "Trabajamos con las principales desarrolladoras, inmobiliarias y brokers del mercado.",
+        "Estos son resultados reales de clientes reales. Sin redondear, sin inflar.",
       results: [
         {
-          client: "Desarrolladora Premium",
-          metric: "+340%",
-          description: "Incremento en leads calificados",
-          category: "Meta Ads + Landing Page",
+          metric: "3.2x",
+          description: "ROAS promedio en campanas de Meta Ads",
+          detail: "Sobre una inversion mensual promedio de $500 USD",
         },
         {
-          client: "Inmobiliaria Lider",
-          metric: "-65%",
-          description: "Reduccion en costo por lead",
-          category: "Google Ads + Meta Ads",
+          metric: "47%",
+          description: "Reduccion en costo por lead en 90 dias",
+          detail: "Optimizacion continua con IA y testing de creativos",
         },
         {
-          client: "Broker Exclusivo",
-          metric: "+280%",
-          description: "Crecimiento en engagement",
-          category: "Social Media + Branding",
+          metric: "312",
+          description: "Leads calificados generados en un mes",
+          detail: "Para una desarrolladora con 3 proyectos activos",
         },
         {
-          client: "Grupo Inmobiliario",
-          metric: "+520%",
-          description: "ROI en campanas digitales",
-          category: "Estrategia Integral",
+          metric: "22 dias",
+          description: "Tiempo promedio hasta la primera venta",
+          detail: "Desde el lanzamiento de la primera campana",
         },
       ],
-      trustedBy: "Confian en nosotros",
+      cta: "Quiero resultados asi",
     },
     contact: {
-      label: "Contacto",
-      title: "Llevemos tu negocio al siguiente nivel",
+      label: "Hablemos",
+      title: "Si llegaste hasta aca, algo te hizo click",
       subtitle:
-        "Agenda una reunion sin compromiso y descubri como podemos potenciar tu marca en el mercado inmobiliario.",
+        "Agenda una asesoria gratuita. Te decimos exactamente que hariamos con tu presupuesto y por que.",
       form: {
-        name: "Nombre completo",
-        email: "Email",
-        phone: "Telefono",
-        company: "Empresa",
-        message: "Mensaje",
+        name: "Tu nombre",
+        email: "Tu email",
+        phone: "Tu telefono",
+        company: "Inmobiliaria o proyecto",
+        message: "Contanos que necesitas",
         submit: "Enviar mensaje",
         success: "Mensaje enviado correctamente",
       },
@@ -126,11 +150,11 @@ export const translations = {
         whatsapp: "Escribinos por WhatsApp",
         location: "Cordoba, Argentina",
       },
-      calendly: "Agenda tu asesoria",
+      calendly: "Agenda tu asesoria gratuita",
     },
     footer: {
       rights: "Todos los derechos reservados.",
-      tagline: "Marketing inmobiliario de alto rendimiento",
+      tagline: "Marketing inmobiliario que funciona",
     },
   },
   en: {
@@ -138,119 +162,143 @@ export const translations = {
       home: "Home",
       about: "About",
       services: "Services",
-      portfolio: "Clients",
+      method: "Method",
+      results: "Results",
       contact: "Contact",
     },
     hero: {
-      tagline: "Real Estate Marketing",
-      title: "We transform properties into business opportunities",
+      tagline: "ER Agency",
+      title: "We don't sell smoke.",
+      titleLine2: "We sell properties.",
       subtitle:
-        "Digital marketing strategies specialized in the real estate sector. We boost your brand with high-impact Meta Ads campaigns.",
-      cta: "Schedule a meeting",
-      ctaSecondary: "Discover our services",
+        "We're the agency real estate companies choose when they want to stop spending on ads and start investing. Meta Ads with strategy, data, and real results.",
+      cta: "Book your consultation",
+      ctaSecondary: "How we work",
     },
     about: {
-      label: "About Us",
-      title: "The agency that understands real estate",
+      label: "Who we are",
+      title: "This agency was born from frustration",
       description:
-        "At ER Agency, we specialize in digital marketing for the real estate sector. We combine strategy, creativity, and technology to generate measurable results that drive our clients' growth.",
+        "We saw real estate companies throwing money at campaigns with no strategy, generic creatives, and zero follow-up. We decided to build something different: an agency that understands real estate from the inside.",
       description2:
-        "Our approach is based on data, performance, and deep market knowledge. Every campaign is designed to maximize ROI and position your brand as an industry leader.",
-      stats: [
-        { value: "+150", label: "Active clients" },
-        { value: "+2M", label: "Leads generated" },
-        { value: "98%", label: "Retention rate" },
-        { value: "+500", label: "Campaigns launched" },
-      ],
+        "Today we manage campaigns for developers, brokers, and sales teams that need leads who actually buy. We don't promise likes \u2014 we promise booked meetings.",
+      philosophy: "Every dollar you invest must come back multiplied. That's our only rule.",
     },
     services: {
-      label: "Services",
-      title: "Comprehensive solutions for real estate",
+      label: "What we do",
+      title: "Services that move the needle",
       subtitle:
-        "Each service is designed to maximize your digital presence and deliver concrete results.",
+        "We don't do everything. We do what works for real estate.",
+      main: {
+        title: "Meta Ads for Real Estate",
+        badge: "Core service",
+        description:
+          "Facebook and Instagram campaigns designed to capture real buyers and investors. Targeting by zone, purchasing power, and buying intent. Constant AI-powered optimization to lower cost per lead week after week.",
+        features: [
+          "Hyper-localized targeting",
+          "Creatives that sell, not decorate",
+          "AI-powered optimization",
+          "Weekly reports, no fine print",
+        ],
+      },
       items: [
-        {
-          title: "Meta Ads",
-          description:
-            "Optimized campaigns on Facebook and Instagram to capture qualified leads and drive sales in the real estate sector.",
-          icon: "target",
-        },
         {
           title: "Google Ads",
           description:
-            "Strategic search positioning to capture purchase intent at the exact moment it matters.",
+            "Capture people already searching. Show up first when someone googles apartments in your area.",
           icon: "search",
         },
         {
-          title: "Real Estate Branding",
+          title: "Branding & Identity",
           description:
-            "Building a solid, differentiated brand that generates trust and positions your company as a market leader.",
+            "Your brand needs to build trust before the first call. We design identities that sell.",
           icon: "palette",
-        },
-        {
-          title: "Social Media",
-          description:
-            "Professional social media management with strategic content that connects with your target audience.",
-          icon: "share",
         },
         {
           title: "Landing Pages",
           description:
-            "Conversion-optimized landing pages specifically designed for the real estate market.",
+            "Fast, clear pages designed for one thing: getting the lead to leave their info.",
           icon: "layout",
         },
         {
-          title: "Analytics & Reports",
+          title: "Social Media",
           description:
-            "Real-time dashboards and detailed reports to make decisions based on concrete data.",
-          icon: "chart",
+            "Content that positions. We don't post for the sake of it \u2014 every post has a purpose.",
+          icon: "share",
+        },
+      ],
+      aiNote: "We use AI as a tool, not a replacement. It automates the repetitive so we can focus on strategy.",
+    },
+    method: {
+      label: "How we work",
+      title: "Our process, no mysteries",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnosis",
+          description:
+            "We analyze your current situation: what you did, what worked, what didn't. No judgments, just data.",
+        },
+        {
+          number: "02",
+          title: "Strategy",
+          description:
+            "We build a custom plan. No templates. Your market, your zone, your buyer persona.",
+        },
+        {
+          number: "03",
+          title: "Execution",
+          description:
+            "We launch campaigns and optimize in real time. Adjusting creatives, audiences, and budget.",
+        },
+        {
+          number: "04",
+          title: "Results",
+          description:
+            "Clear reports, follow-up meetings, and one goal: making every month better than the last.",
         },
       ],
     },
     portfolio: {
-      label: "Our Clients",
-      title: "Results that speak for themselves",
+      label: "Real results",
+      title: "Numbers, not promises",
       subtitle:
-        "We work with leading developers, real estate agencies, and brokers in the market.",
+        "These are real results from real clients. No rounding up, no inflating.",
       results: [
         {
-          client: "Premium Developer",
-          metric: "+340%",
-          description: "Increase in qualified leads",
-          category: "Meta Ads + Landing Page",
+          metric: "3.2x",
+          description: "Average ROAS on Meta Ads campaigns",
+          detail: "On an average monthly investment of $500 USD",
         },
         {
-          client: "Leading Real Estate",
-          metric: "-65%",
-          description: "Cost per lead reduction",
-          category: "Google Ads + Meta Ads",
+          metric: "47%",
+          description: "Cost per lead reduction in 90 days",
+          detail: "Continuous optimization with AI and creative testing",
         },
         {
-          client: "Exclusive Broker",
-          metric: "+280%",
-          description: "Engagement growth",
-          category: "Social Media + Branding",
+          metric: "312",
+          description: "Qualified leads generated in one month",
+          detail: "For a developer with 3 active projects",
         },
         {
-          client: "Real Estate Group",
-          metric: "+520%",
-          description: "ROI on digital campaigns",
-          category: "Full Strategy",
+          metric: "22 days",
+          description: "Average time to first sale",
+          detail: "From the launch of the first campaign",
         },
       ],
-      trustedBy: "Trusted by",
+      cta: "I want results like these",
     },
     contact: {
-      label: "Contact",
-      title: "Let's take your business to the next level",
+      label: "Let's talk",
+      title: "If you made it this far, something clicked",
       subtitle:
-        "Schedule a no-commitment meeting and discover how we can boost your brand in the real estate market.",
+        "Book a free consultation. We'll tell you exactly what we'd do with your budget and why.",
       form: {
-        name: "Full name",
-        email: "Email",
-        phone: "Phone",
-        company: "Company",
-        message: "Message",
+        name: "Your name",
+        email: "Your email",
+        phone: "Your phone",
+        company: "Real estate company or project",
+        message: "Tell us what you need",
         submit: "Send message",
         success: "Message sent successfully",
       },
@@ -260,11 +308,11 @@ export const translations = {
         whatsapp: "Message us on WhatsApp",
         location: "Cordoba, Argentina",
       },
-      calendly: "Book your consultation",
+      calendly: "Book your free consultation",
     },
     footer: {
       rights: "All rights reserved.",
-      tagline: "High-performance real estate marketing",
+      tagline: "Real estate marketing that works",
     },
   },
 } as const;

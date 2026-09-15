@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, Calendar } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Calendar } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
@@ -16,7 +16,6 @@ function WhatsAppIcon({ size = 20 }: { size?: number }) {
 const WHATSAPP_NUMBER = "5493512153366";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola! Me interesa conocer mas sobre los servicios de ER Agency.")}`;
 const CALENDLY_URL = "https://calendly.com/itseragency/asesoria";
-const INSTAGRAM_URL = "https://www.instagram.com/itsenzoroldan";
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -32,37 +31,34 @@ export default function Contact() {
     "w-full bg-background/80 border border-border rounded-lg px-5 py-4 text-foreground placeholder:text-muted/40 focus:outline-none focus:border-gold/50 focus:ring-1 focus:ring-gold/20 transition-all duration-300";
 
   return (
-    <section id="contacto" className="py-24 md:py-32 bg-surface relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--color-surface-light)_0%,_transparent_50%)]" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/3 rounded-full blur-[100px]" />
+    <section id="contacto" className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/[0.02] rounded-full blur-[100px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 md:mb-20"
+          className="mb-16"
         >
-          <span className="text-gold text-sm tracking-[0.3em] uppercase font-medium">
+          <span className="text-gold text-sm tracking-[0.25em] uppercase font-medium">
             {t.contact.label}
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-4">
             {t.contact.title}
           </h2>
-          <div className="w-16 h-px bg-gold/40 mx-auto mb-6" />
-          <p className="text-muted text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-xl">
             {t.contact.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3"
           >
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
@@ -93,14 +89,14 @@ export default function Contact() {
               </div>
               <textarea
                 placeholder={t.contact.form.message}
-                rows={5}
+                rows={4}
                 required
                 className={`${inputClasses} resize-none`}
               />
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="group flex-1 inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-background font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
+                  className="group inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light text-background font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
                 >
                   {submitted ? (
                     <>
@@ -121,7 +117,7 @@ export default function Contact() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
+                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 text-sm tracking-wider uppercase"
                 >
                   <WhatsAppIcon size={18} />
                   WhatsApp
@@ -131,24 +127,43 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 flex flex-col justify-center gap-8"
+            className="flex flex-col gap-8 lg:min-w-[260px]"
           >
             <a
-              href={`mailto:${t.contact.info.email}`}
-              className="flex items-start gap-5 group"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 group"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0 group-hover:bg-gold/20 transition-colors">
-                <Mail size={20} />
+              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0 group-hover:bg-gold/20 transition-colors">
+                <Calendar size={18} />
               </div>
               <div>
-                <p className="text-sm text-muted mb-1.5 tracking-wider uppercase">
+                <p className="text-xs text-muted mb-1 tracking-wider uppercase">
+                  Calendly
+                </p>
+                <p className="text-sm text-foreground font-medium group-hover:text-gold transition-colors">
+                  {t.contact.calendly}
+                </p>
+              </div>
+            </a>
+
+            <a
+              href={`mailto:${t.contact.info.email}`}
+              className="flex items-start gap-4 group"
+            >
+              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0 group-hover:bg-gold/20 transition-colors">
+                <Mail size={18} />
+              </div>
+              <div>
+                <p className="text-xs text-muted mb-1 tracking-wider uppercase">
                   Email
                 </p>
-                <p className="text-foreground font-medium group-hover:text-gold transition-colors">
+                <p className="text-sm text-foreground font-medium group-hover:text-gold transition-colors">
                   {t.contact.info.email}
                 </p>
               </div>
@@ -158,49 +173,30 @@ export default function Contact() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-start gap-5 group"
+              className="flex items-start gap-4 group"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-[#25D366]/10 text-[#25D366] shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
-                <WhatsAppIcon size={20} />
+              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#25D366]/10 text-[#25D366] shrink-0 group-hover:bg-[#25D366]/20 transition-colors">
+                <WhatsAppIcon size={18} />
               </div>
               <div>
-                <p className="text-sm text-muted mb-1.5 tracking-wider uppercase">
+                <p className="text-xs text-muted mb-1 tracking-wider uppercase">
                   WhatsApp
                 </p>
-                <p className="text-foreground font-medium group-hover:text-[#25D366] transition-colors">
+                <p className="text-sm text-foreground font-medium group-hover:text-[#25D366] transition-colors">
                   {t.contact.info.phone}
                 </p>
               </div>
             </a>
 
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-5 group"
-            >
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0 group-hover:bg-gold/20 transition-colors">
-                <Calendar size={20} />
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0">
+                <MapPin size={18} />
               </div>
               <div>
-                <p className="text-sm text-muted mb-1.5 tracking-wider uppercase">
-                  Calendly
-                </p>
-                <p className="text-foreground font-medium group-hover:text-gold transition-colors">
-                  {t.contact.calendly}
-                </p>
-              </div>
-            </a>
-
-            <div className="flex items-start gap-5">
-              <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-gold/10 text-gold shrink-0">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <p className="text-sm text-muted mb-1.5 tracking-wider uppercase">
+                <p className="text-xs text-muted mb-1 tracking-wider uppercase">
                   {language === "es" ? "Ubicacion" : "Location"}
                 </p>
-                <p className="text-foreground font-medium">
+                <p className="text-sm text-foreground font-medium">
                   {t.contact.info.location}
                 </p>
               </div>

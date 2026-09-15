@@ -18,10 +18,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#inicio", label: t.nav.home },
     { href: "#nosotros", label: t.nav.about },
     { href: "#servicios", label: t.nav.services },
-    { href: "#clientes", label: t.nav.portfolio },
+    { href: "#metodo", label: t.nav.method },
+    { href: "#resultados", label: t.nav.results },
     { href: "#contacto", label: t.nav.contact },
   ];
 
@@ -36,16 +36,16 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="#inicio" className="flex items-center">
             <Image
               src="/logo.jpg"
               alt="ER Agency"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               className="object-contain"
-              style={{ width: "auto", height: "60px" }}
+              style={{ width: "auto", height: "50px" }}
             />
           </a>
 

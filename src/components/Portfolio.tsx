@@ -1,111 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Portfolio() {
   const { t } = useLanguage();
 
   return (
-    <section id="clientes" className="py-32 relative">
-      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-24 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
+    <section id="resultados" className="py-24 md:py-32 bg-surface relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--color-surface-light)_0%,_transparent_50%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="mb-16"
         >
-          <span className="text-gold text-sm tracking-[0.3em] uppercase font-medium">
+          <span className="text-gold text-sm tracking-[0.25em] uppercase font-medium">
             {t.portfolio.label}
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-4">
             {t.portfolio.title}
           </h2>
-          <div className="w-16 h-px bg-gold/40 mx-auto mb-6" />
-          <p className="text-muted text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-lg max-w-xl">
             {t.portfolio.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {t.portfolio.results.map(
             (
               result: {
-                client: string;
                 metric: string;
                 description: string;
-                category: string;
+                detail: string;
               },
               index: number
-            ) => {
-              const isNegative = result.metric.startsWith("-");
-              return (
-                <motion.div
-                  key={result.client}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative p-8 bg-surface border border-border rounded-xl hover:border-gold/30 transition-all duration-500"
-                >
-                  <div className="flex items-start justify-between mb-8">
-                    <div>
-                      <p className="text-foreground font-medium mb-1">
-                        {result.client}
-                      </p>
-                      <p className="text-xs text-gold tracking-wider uppercase">
-                        {result.category}
-                      </p>
-                    </div>
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gold/10 text-gold">
-                      {isNegative ? (
-                        <TrendingDown size={20} />
-                      ) : (
-                        <TrendingUp size={20} />
-                      )}
-                    </div>
-                  </div>
-                  <div className="text-5xl md:text-6xl font-serif font-bold text-gold mb-3">
+            ) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative"
+              >
+                <div className="p-6 md:p-8 bg-background/60 border border-border rounded-xl hover:border-gold/20 transition-all duration-400 h-full flex flex-col">
+                  <div className="text-4xl md:text-5xl font-serif font-bold text-gold mb-4">
                     {result.metric}
                   </div>
-                  <p className="text-muted text-lg">{result.description}</p>
-                </motion.div>
-              );
-            }
+                  <p className="text-foreground font-medium mb-2 text-sm">
+                    {result.description}
+                  </p>
+                  <p className="text-muted text-xs leading-relaxed mt-auto">
+                    {result.detail}
+                  </p>
+                </div>
+              </motion.div>
+            )
           )}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 text-center"
         >
-          <p className="text-sm text-muted tracking-[0.3em] uppercase mb-12">
-            {t.portfolio.trustedBy}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-8 opacity-30 hover:opacity-50 transition-opacity duration-500">
-            {[
-              "Grupo Norte",
-              "EDSA",
-              "Inmobilia",
-              "Capital RE",
-              "Urban Dev",
-              "ProCity",
-            ].map((name) => (
-              <div
-                key={name}
-                className="text-lg md:text-xl font-serif tracking-[0.2em] text-foreground"
-              >
-                {name}
-              </div>
-            ))}
-          </div>
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors text-sm tracking-wider uppercase font-medium"
+          >
+            {t.portfolio.cta}
+            <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </a>
         </motion.div>
       </div>
     </section>
