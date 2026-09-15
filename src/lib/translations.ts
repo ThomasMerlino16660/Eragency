@@ -121,10 +121,12 @@ export const translations = {
         success: "Mensaje enviado correctamente",
       },
       info: {
-        email: "hola@eragency.com",
-        phone: "+54 11 1234-5678",
-        location: "Buenos Aires, Argentina",
+        email: "itsenzoroldan@gmail.com",
+        phone: "+54 9 3512 15-3366",
+        whatsapp: "Escribinos por WhatsApp",
+        location: "Cordoba, Argentina",
       },
+      calendly: "Agenda tu asesoria",
     },
     footer: {
       rights: "Todos los derechos reservados.",
@@ -253,10 +255,12 @@ export const translations = {
         success: "Message sent successfully",
       },
       info: {
-        email: "hello@eragency.com",
-        phone: "+54 11 1234-5678",
-        location: "Buenos Aires, Argentina",
+        email: "itsenzoroldan@gmail.com",
+        phone: "+54 9 3512 15-3366",
+        whatsapp: "Message us on WhatsApp",
+        location: "Cordoba, Argentina",
       },
+      calendly: "Book your consultation",
     },
     footer: {
       rights: "All rights reserved.",

@@ -82,7 +82,9 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#contacto"
+            href="https://calendly.com/itseragency/asesoria"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-background font-semibold px-8 py-4 rounded transition-all duration-300 text-sm tracking-wider uppercase"
           >
             {t.hero.cta}
