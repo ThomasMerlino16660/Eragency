@@ -18,10 +18,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#nosotros", label: t.nav.about },
-    { href: "#servicios", label: t.nav.services },
-    { href: "#metodo", label: t.nav.method },
     { href: "#resultados", label: t.nav.results },
+    { href: "#sistema", label: t.nav.method },
+    { href: "#enzo", label: t.nav.about },
     { href: "#contacto", label: t.nav.contact },
   ];
 
@@ -36,16 +35,16 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           <a href="#inicio" className="flex items-center">
             <Image
               src="/logo.jpg"
               alt="ER Agency"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
               className="object-contain"
-              style={{ width: "auto", height: "50px" }}
+              style={{ width: "auto", height: "40px" }}
             />
           </a>
 
@@ -61,7 +60,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => setLanguage(language === "es" ? "en" : "es")}
-              className="text-sm tracking-wider uppercase text-gold hover:text-gold-light transition-colors duration-300 border border-gold/30 px-3 py-1.5 rounded"
+              className="text-sm tracking-wider uppercase text-gold hover:text-gold-light transition-colors duration-300 border border-gold/30 px-3 py-1 rounded"
             >
               {language === "es" ? "EN" : "ES"}
             </button>
